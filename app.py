@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from werkzeug.urls import url_quote
+from werkzeug.utils import quote
 
 
 app = Flask(__name__)
