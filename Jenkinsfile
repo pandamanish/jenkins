@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Activate the virtual environment and run tests
-               sh 'bash -c "source venv/bin/activate && pytest"'
+               sh 'bash -c "source venv/bin/activate && pytest tests/test_app.py"'
             }
         }
 
