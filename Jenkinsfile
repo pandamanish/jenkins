@@ -4,13 +4,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                // Create a virtual environment and install dependencies
+                sh '''
+                    python3 -m venv venv
+                    source venv/bin/activate
+                    pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                sh 'pytest'
+                // Activate the virtual environment and run tests
+                sh '''
+                    source venv/bin/activate
+                    pytest
+                '''
             }
         }
 
@@ -20,7 +29,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying application...'
-                // AWS-specific deploy commands (described below)
+                // AWS-specific deploy commands (e.g., using AWS CLI or scripts)
             }
         }
     }
