@@ -1,0 +1,4 @@
+Flask==2.0.2          # Flask web framework
+pytest==6.2.5         # Testing framework for Python
+pytest-flask==1.2.0   # Pytest plugin for Flask applications
+requests==2.26.0      # Library to make HTTP requests (if needed for testing)
